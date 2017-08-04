@@ -1,0 +1,40 @@
+{
+  "name": "lu-grid",
+  "version": "1.0.0",
+  "description": "CSS grid layout with styled components.",
+  "main": "index.js",
+  "author": "Ludwig Frank",
+  "license": "MIT",
+  "scripts": {
+    "prepublish": "babel src -d dist",
+    "start": "webpack-dev-server",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch ./",
+    "lib": "babel src/node_modules --out-dir lib --copy-files",
+    "test": "mocha -w test/helpers/setup.js test/*.spec.js"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "styled-components": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.1.0",
+    "chai-enzyme": "^0.8.0",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "jsdom": "^11.1.0",
+    "mocha": "^3.5.0",
+    "path": "^0.12.7",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}
