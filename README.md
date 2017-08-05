@@ -8,8 +8,7 @@ yarn
 yarn start
 ```
 
-The library consists of 4 Components: 
-
+## Components
 ### Guides
 Add this component at the root component of your app.
 The opacity is set to 0 by default. Press *g* to show it.

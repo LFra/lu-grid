@@ -9,7 +9,7 @@ const mediaProps = Object.keys(config.breakpoints).reduce((accumulator, label) =
     `
         @media (max-width: ${emSize}em) {
             max-width: ${config.breakpoints[label].max_width};
-            grid-gap: ${config.breakpoints[label].gutter}px;
+            grid-gap: ${config.breakpoints[label].gutter / 16}em;
             background: ${config.breakpoints[label].color};
         }
     `
@@ -18,7 +18,7 @@ const mediaProps = Object.keys(config.breakpoints).reduce((accumulator, label) =
     //  Default styles.
     `
         max-width: 85%;
-        grid-gap: ${config.def.gutter}px;
+        grid-gap: ${config.def.gutter / 16}em;
         background: ${config.def.color};
     `
 )
@@ -28,6 +28,5 @@ export const Wrapper = styled.div`
     grid-template-columns: repeat(${config.columns}, 1fr);
     display: grid;
     margin: 0 auto;
-    height: 20px;
     ${mediaProps}
 `

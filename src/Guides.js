@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Wrapper } from './Wrapper'
+import { config } from './lib'
 
 const GuideColumn = styled.div`
     opacity: 1;
@@ -10,6 +11,7 @@ const GuideColumn = styled.div`
     position: relative;
     grid: span 12;
 `
+
 const GuideRow = styled.div`
     opacity: 1;
     width: 100%;
@@ -72,7 +74,7 @@ export class Guides extends Component {
 
         return (
             <div ref={e => this.element = e} style={{opacity: 0}}>
-                <Repeat numTimes={12} component={Fixed}>
+                <Repeat numTimes={config.columns} component={Fixed}>
                     {(index) => <GuideColumn key={index}> </GuideColumn>}
                 </Repeat>
                 <Repeat numTimes={42} component={RowFixed}>
