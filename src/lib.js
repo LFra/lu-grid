@@ -32,33 +32,6 @@ export const media = Object.keys(config.breakpoints).reduce((accumulator, label)
 }, {})
 
 
-
-export const fluid = ( arr, props ) => arr.reduce((acc, item, index) => {
-    const breakpoints = config.breakpoints
-    let styles = ''
-    let grid = ''
-    // if an array is provided, shift the column by the first argument
-    if (Array.isArray(item)) styles = `grid-column: ${arr[index][1]} / span ${arr[index][0]};`
-    else styles = `grid-column: span ${arr[index]};`
-
-    return acc + `@media (max-width: ${breakpoints[Object.keys(breakpoints)[index]].width / 16}em) {
-        ${styles}
-        ${props.grid ? `display: grid;
-            grid-template-columns: repeat(${Array.isArray(item) ? arr[index][0] : arr[index] }, 1fr);
-            grid-column-gap: ${breakpoints[Object.keys(breakpoints)[index]].gap}px;
-            ` : ``
-            }
-        }`
-}, `grid-column: span 12;
-    align-self: start;
-    ${props.grid && `
-        display: grid;
-        grid-template-columns: repeat(${config.columns}, 1fr);
-        grid-column-gap: 16px;
-        `
-    }`
-)
-
 export const flui = (arr, props) => {
     console.log(props.translate)
 
